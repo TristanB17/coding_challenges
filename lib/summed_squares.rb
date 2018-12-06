@@ -1,7 +1,7 @@
 
 def list_squared(range_start, range_end)
   desired_range = get_range(range_start, range_end)
-  desired_range.reduce([]) do |array, number|
+  desired_range.inject([]) do |array, number|
     sum_of_divisors_squared = check_sum_of_each(number)
     if is_square?(sum_of_divisors_squared)
       array << [number, sum_of_divisors_squared]
@@ -16,7 +16,7 @@ end
 
 def check_sum_of_each(number)
   range = (1..number).to_a
-  result = range.reduce([]) do |array, num|
+  result = range.inject([]) do |array, num|
     if (number % num).zero?
       array << num
     end
@@ -27,6 +27,25 @@ end
 
 def is_square?(number)
   (Math.sqrt(number) % 1).zero?
+end
+
+def get_divisors_squared(number)
+  range = (1..number).to_a
+  result = range.inject([]) do |array, num|
+    array << (num ** 2) if (number % num).zero?
+    array
+  end.sum
+end
+
+def list_squared_alternate(range_start, range_end)
+  desired_range = get_range(range_start, range_end)
+  desired_range.inject([]) do |array, number|
+    sum_of_divisors_squared = get_divisors_squared(number)
+    if is_square?(sum_of_divisors_squared)
+      array << [number, sum_of_divisors_squared]
+    end
+    array
+  end
 end
 
 #   Divisors of 42 are : 1, 2, 3, 6, 7, 14, 21, 42. These divisors squared are: 1, 4, 9, 36, 49, 196, 441, 1764. The sum of the squared divisors is 2500 which is 50 * 50, a square!

@@ -34,11 +34,21 @@ class SummedSquaresTest < Minitest::Test
     number_2 = 42
     expected = [[1,1], [42, 2500]]
     result = list_squared(number_1, number_2)
+    assert_equal expected, result
   end
 
-  # def test_it_squares_and_adds_numbers
-  #   sample_array = [1, 2, 3, 6, 7, 14, 21, 42]
-  #   result = true
-  #   assert_equal result, sample_array
-  # end
+  def test_alternative_get_sum_of_divisors_squared_method
+    number = 42
+    expected = 2500
+    result = get_divisors_squared(42)
+    assert_equal expected, result
+  end
+
+  def test_list_squared_alternate
+    number_1 = 1
+    number_2 = 42
+    expected = [[1,1], [42, 2500]]
+    result = list_squared_alternate(number_1, number_2)
+    assert_equal expected, result
+  end
 end
