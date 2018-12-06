@@ -15,7 +15,7 @@ class SummedSquaresTest < Minitest::Test
 
   def test_adds_divisors_squared_from_one_to_target_number
     number = 5
-    result = [1]
+    result = 26
     abridged = check_sum_of_each(number)
     assert_equal result, abridged
   end
