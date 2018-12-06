@@ -4,7 +4,9 @@ def list_squared(range_start, range_end)
   desired_range.reduce([]) do |array, number|
     sum_of_divisors_squared = check_sum_of_each(number)
     if is_square?(sum_of_divisors_squared)
+      array << [number, sum_of_divisors_squared]
     end
+    array
   end
 end
 

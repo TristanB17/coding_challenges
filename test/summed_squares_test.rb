@@ -29,6 +29,13 @@ class SummedSquaresTest < Minitest::Test
     assert_equal result_2, is_square?(number_2)
   end
 
+  def test_it_can_return_array_of_arrays_of_numbers_and_their_divisors_squared
+    number_1 = 1
+    number_2 = 42
+    expected = [[1,1], [42, 2500]]
+    result = list_squared(number_1, number_2)
+  end
+
   # def test_it_squares_and_adds_numbers
   #   sample_array = [1, 2, 3, 6, 7, 14, 21, 42]
   #   result = true
