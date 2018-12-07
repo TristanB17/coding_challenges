@@ -51,4 +51,27 @@ class SummedSquaresTest < Minitest::Test
     result = list_squared_alternate(number_1, number_2)
     assert_equal expected, result
   end
+
+  def test_all_in_one
+    number = 42
+    expected = 2500
+    result = all_factors_summed(number)
+    assert_equal expected, result
+  end
+
+  def test_all_in_one_from_beginning
+    number_1 = 1
+    number_2 = 246
+    expected = [[1,1], [42, 2500], [246, 84100]]
+    result = list_squared_all_in_one(number_1, number_2)
+    assert_equal expected, result
+  end
+
+  def test_all_in_one_scalability
+    number_1 = 1
+    number_2 = 10000
+    expected = [[1,1], [42, 2500], [246, 84100], [287, 84100], [728, 722500], [1434, 2856100], [1673, 2856100], [1880, 4884100], [4264, 24304900], [6237, 45024100], [9799, 96079204], [9855, 113635600]]
+    result = list_squared_all_in_one(number_1, number_2)
+    assert_equal expected, result
+  end
 end
