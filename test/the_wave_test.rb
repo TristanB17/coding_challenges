@@ -26,4 +26,11 @@ class TheWaveTest < Minitest::Test
     result = replace_a_letter(word, letter, index)
     assert_equal modified_word, result
   end
+
+  def test_it_ignores_non_letters
+    word = ' howd1y '
+    expected = [' Howd1y ', ' hOwd1y ', ' hoWd1y ', ' howD1y ', ' howd1Y ']
+    result = do_the_wave(word)
+    assert_equal expected, result
+  end
 end

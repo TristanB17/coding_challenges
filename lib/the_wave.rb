@@ -7,7 +7,7 @@ def do_the_wave(word)
   word.chars.map.with_index do |letter, index|
     duplicate = word.dup
     replace_a_letter(duplicate, letter, index) if alphabet[letter]
-  end
+  end.compact
 end
 
 def replace_a_letter(word, letter, index)
