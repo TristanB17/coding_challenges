@@ -22,9 +22,9 @@ class TheWaveTest < Minitest::Test
     letter = 'a'
     index = 1
     word = 'barnacle'
-    modified_word = 'bArnacle'
+    expected = 'bArnacle'
     result = replace_a_letter(word, letter, index)
-    assert_equal modified_word, result
+    assert_equal expected, result
   end
 
   def test_it_ignores_non_letters
