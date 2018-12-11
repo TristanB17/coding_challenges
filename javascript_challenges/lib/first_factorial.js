@@ -11,4 +11,18 @@ const combinedMethods = (string) => {
   return integerArray.reduce((a,b) => a * b)
 }
 
-module.exports = {numberToArray, multiplyTogether, combinedMethods}
+const multiplyArrayRange = (number) => {
+  array = [...Array(number + 1).keys()]
+  array.shift()
+  return array.reduce((a,b) => a * b)
+}
+
+const recursiveSolution = (number) => {
+  result = 1
+  for(var i = 1; i <= number; i++) {
+    result = result * i
+  }
+  return result;
+}
+
+module.exports = {numberToArray, multiplyTogether, combinedMethods, multiplyArrayRange, recursiveSolution}
