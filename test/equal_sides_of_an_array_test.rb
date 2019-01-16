@@ -38,6 +38,22 @@ class EqualSidesTest < Minitest::Test
 
     assert_equal eqtest.find_equal_index, result
   end
+
+  def test_it_returns_index_zero_if_all_higher_indexes_add_up_to_zero
+    number_array = [1, -2, 1, 1]
+    eqtest = EqualSides.new(number_array)
+    result = 0
+
+    assert_equal eqtest.find_equal_index, result
+  end
+
+  def test_it_returns_negative_one_if_no_index_found
+    number_array = [4, 4, 4, 4]
+    eqtest = EqualSides.new(number_array)
+    result = -1
+
+    assert_equal eqtest.find_equal_index, result
+  end
 end
 
 # You are going to be given an array of integers. Your job is to take that array and find an index N where the sum of the integers to the left of N is equal to the sum of the integers to the right of N. If there is no index that would make this happen, return -1.

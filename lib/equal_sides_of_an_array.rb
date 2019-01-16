@@ -24,5 +24,4 @@ class EqualSides
     end
     return -1
   end
-
 end
