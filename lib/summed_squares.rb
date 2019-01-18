@@ -9,6 +9,7 @@ def list_squared(range_start, range_end)
     array
   end
 end
+# does this work
 
 def get_range(range_start, range_end)
   (range_start..range_end).to_a
