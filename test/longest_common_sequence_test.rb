@@ -8,7 +8,7 @@ class LongestCommonSequenceTest < Minitest::Test
     string_1 = 'abcdef'
     string_2 = 'abcefd'
     expected = lcs(string_1, string_2)
-    result = 'abc'
+    result = 'abcef'
 
     assert_equal expected, result
   end
